@@ -1,0 +1,15 @@
+<rocket>
+  <name>Starship</name>
+  <height-m>120</height-m>
+  <weight-t>1300</weight-t> 
+  <valueofdevelopment-bln>2-3</valueofdevelopment-bln>
+  <thebiggestrocket>true</thebiggestrocket>
+  <Launchsites>
+    <Launchsites>SpaceX Star base OLM-A</Launchsites>
+    <Launchsites>SpaceX Starbase OLM-B</Launchsites>
+    <Launchsites>Kennedy Space Center</Launchsites>
+    <Launchsites>LC-39A</Launchsites>
+    <Launchsites>Cape Canaveral Space Force Station</Launchsites>
+    <Launchsites>SLC-37</Launchsites>
+  </Launchsites>
+</rocket>
