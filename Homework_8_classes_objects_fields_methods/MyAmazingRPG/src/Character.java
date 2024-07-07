@@ -10,22 +10,21 @@ public class Character {
     int health;
     int strength;
     int defense;
-
-
     static int potion = 20;
-    static int strenthUp = 12;
-    static int criticalHit = 24;
+    int strengthUp;
+    int criticalHit;
 
     public void healthUp() {
         this.health = this.health + potion;
     }
-    public void setStrenthUp() {
-        this.strength = this.strength + strenthUp;
-    }
-    public void useCriticalHit(Character other) {
-        other.takeDamage(this.strength + criticalHit - other.defense);
+
+    public void setStrengthUp() {
+        this.strength = this.strengthUp;
     }
 
+    public void useCriticalHit(Character other) {
+        other.takeDamage(this.strength + this.criticalHit - other.defense);
+    }
 
     public void attack(Character other) {
         other.takeDamage(this.strength - other.defense);
@@ -48,10 +47,5 @@ public class Character {
     }
 
 }
-//    public void attack(Character other) {
-//        other.takeDamage(this.strength - other.defense);
-//    }
-//    public void takeDamage(int damage) {
-//        this.health -= damage;
-//    }
+
 
