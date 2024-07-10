@@ -1,42 +1,21 @@
 public class Character {
 
-    static int characterCount;
 
     public Character() {
         characterCount++;
     }
 
+    static int characterCount;
+    static final int POTION = 20;
     String name;
     int health;
     int strength;
     int defense;
-    static int potion = 20;
-    int strengthUp;
     int criticalHit;
-
-    public void healthUp() {
-        this.health = this.health + potion;
-    }
-
-    public void setStrengthUp() {
-        this.strength = this.strengthUp;
-    }
-
-    public void useCriticalHit(Character other) {
-        other.takeDamage(this.strength + this.criticalHit - other.defense);
-    }
 
     public void attack(Character other) {
         other.takeDamage(this.strength - other.defense);
-    }
-
-    public void takeDamage(int damage) {
-        this.health -= damage;
-        if (damage > 0) ;
-    }
-
-    public boolean isAlive() {
-        return this.health > 0;
+        System.out.println(this.name + " attacked " + other.name);
     }
 
     public void displayStatus() {
@@ -46,6 +25,34 @@ public class Character {
         System.out.println("Defence : " + this.defense);
     }
 
+    public void healthUp() {
+        this.health += POTION;
+        System.out.println(this.name + " used health potion:  +20 health");
+    }
+
+    public void setStrengthUp() {
+        this.strength += 11;
+        System.out.println(this.name + " used strengthUp potion:  +11 to strength");
+    }
+
+    public void takeDamage(int damage) {
+        if (damage > 0) {
+            this.health -= damage;
+        }
+    }
+
+    public void useCriticalHit(Character other) {
+        other.takeDamage(this.strength + this.criticalHit - other.defense);
+        System.out.println(this.name + " has made critical attacks to " + other.name);
+    }
+
+
+    public boolean isAlive() {
+        return this.health > 0;
+    }
+
+
 }
+
 
 
