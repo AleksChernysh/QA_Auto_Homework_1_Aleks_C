@@ -6,13 +6,21 @@ import com.example.employees.Manager;
 public class Main {
     public static void main(String[] args) {
 
-        Employee nickCraig = new Manager("Nick Craig",29,3500);
-        Employee robertDawson = new Designer("Robert Dawson",36,3100);
-        Employee mariaFox = new Designer("Maria Fox",29,2800);
-        Employee danielReed = new Developer("Daniel Reed",40,3500);
-        Employee anhelRodriges = new Developer("Anhel Rodriges",34,3000);
-        Employee carlaMancini = new Developer("Carla Mancini",43,3000);
-        Employee aleksDamn = new Developer("Aleks Damn",35,3200);
+        Employee[] employees = {
+                new Manager("Nick Craig", 29, 3500),
+                new Designer("Robert Dawson", 36, 3100),
+                new Designer("Maria Fox", 29, 2800),
+                new Developer("Daniel Reed", 40, 3500),
+                new Developer("Anhel Rodriges", 34, 3000),
+                new Developer("Carla Mancini", 43, 3000),
+                new Developer("Aleks Damn", 35, 3000)
+        };
+        for (Employee employee : employees) {
+            employee.employeeInfo();
+            employee.describeRole();
+            employee.describeRole("");
+            System.out.println("*******************************************");
+        }
 
 
     }

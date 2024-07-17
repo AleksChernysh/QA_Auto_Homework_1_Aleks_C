@@ -14,14 +14,12 @@ public class Developer extends Employee {
     @Override
     public void describeRole() {
         System.out.println("Сreating software");
-
-    }
-
-    @Override
-    public void describeRole(String extraInfo) {
-        System.out.println("building software");
+        System.out.println("Building software");
         System.out.println("Developing apps and websites");
         System.out.println("Bringing ideas to life with code");
+    }
 
+    public void describeRole(String extraInfo) {
+        System.out.println(extraInfo);
     }
 }

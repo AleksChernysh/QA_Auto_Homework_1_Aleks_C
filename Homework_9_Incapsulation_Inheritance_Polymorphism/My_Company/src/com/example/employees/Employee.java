@@ -5,6 +5,7 @@ public class Employee {
     private String name;
     private int age;
     private int salary;
+    private static int minSalary = 2000;
 
     public Employee(String name, int age, int salary) {
         this.name = name;
@@ -39,7 +40,7 @@ public class Employee {
     }
 
     public void setSalary(int salary) {
-        if (salary > 2000) {
+        if (salary > minSalary) {
             this.salary = salary;
         } else {
             System.out.println("The salary isn't correct");
@@ -48,10 +49,11 @@ public class Employee {
 
 
     public void work() {
-        System.out.println(name + " is working from ");
+        System.out.println(" The employee does something  ");
     }
 
     public void takeBrake() {
+        System.out.println("The employee has a brake");
 
     }
 
@@ -65,6 +67,12 @@ public class Employee {
 
     public void describeRole(String extraInfo) {
 
+    }
+
+    public void employeeInfo() {
+        System.out.println("NAME : " + this.name);
+        System.out.println("AGE : " + this.age);
+        System.out.println("SALARY : " + this.salary);
     }
 
 }
