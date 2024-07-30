@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.io.IOException;
-
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 public class Circus<T> {
     private ArrayList<T> performers = new ArrayList<>();
@@ -46,18 +47,26 @@ public class Circus<T> {
 
         }
 
-        public void loadFromFile (String filename){
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
-            
+    }
 
-//        1.Прочитати файл по рядках (в кожному рядку дані одного performer)
-//        2.Записати дані кожного перформера в об'єкт типу CircusPerformer
-//        3.Додати всіх перформерів до списку performers
+    public void loadFromFile(String filename) throws IOException {
+//        1.Читаємо файл,назву якого ми задаємо в параметрі методу
+//        2.Зчитуємо в файлі кожен рядок окремо в циклі при умові в 3 елементи на рядок(масив)
+//        3.Присвоюємо кожен елемент рядка(масива) в змінну конструктора
+//        4.Закриваємо Reader
 
-
-
+        BufferedReader reader = new BufferedReader(new FileReader(filename));
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            String[] fs = line.split(",");
+            if (fs.length == 3) {
+                String name = fs[0];
+                String act = fs[1];
+                int experience = Integer.parseInt(fs[2]);
+                CircusPerformer performer = new CircusPerformer(name, act, experience);
+            }
+            reader.close();
 
         }
-
     }
 }

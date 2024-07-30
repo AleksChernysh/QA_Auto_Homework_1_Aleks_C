@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         CircusPerformer man = new CircusPerformer("Ded", "dfsdfds", 22);
         CircusPerformer clown = new CircusPerformer("Jack", "dgdg", 5);
@@ -12,12 +12,19 @@ public class Main {
         CircusPerformer juggler = new CircusPerformer("Leny","Juggling various objects",4);
         Circus<CircusPerformer> myCircus = new Circus<>();
 
-        myCircus.addPerformer(man);
-        myCircus.addPerformer(clown);
-        myCircus.addPerformer(clown2);
-        myCircus.addPerformer(juggler);
-        myCircus.removePerformer(man);
-        myCircus.saveToFile("My Circus.txt");
+//        myCircus.addPerformer(man);
+//        myCircus.addPerformer(clown);
+//        myCircus.addPerformer(clown2);
+//        myCircus.addPerformer(juggler);
+//        myCircus.removePerformer(man);
+//        myCircus.saveToFile("My_Circus.txt");
+        myCircus.loadFromFile("My_Circus.txt");
+
+
+
+
+
+
     }
 
 }
