@@ -11,6 +11,7 @@ public class CircusPerformer {
     }
 
     public String getName() {
+        System.out.println("Name :" + name);
         return name;
     }
 
@@ -19,6 +20,7 @@ public class CircusPerformer {
     }
 
     public String getAct() {
+        System.out.println("Act :" + act);
         return act;
     }
 
@@ -27,6 +29,7 @@ public class CircusPerformer {
     }
 
     public int getExperience() {
+        System.out.println("Experience :" + experience);
         return experience;
     }
 
@@ -44,4 +47,13 @@ public class CircusPerformer {
         }
     }
 
+    @RunImmediately()
+    public void getInfoPerformer() {
+        getName();
+        getAct();
+        getExperience();
+    }
 }
+
+
+
